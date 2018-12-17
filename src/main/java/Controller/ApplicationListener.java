@@ -46,6 +46,12 @@ public class ApplicationListener implements ServletContextListener {
     }
 
     private void initializeDatabase() {
+        
+        OutputStream nowhere = new OutputStream() {
+			@Override
+			public void write(int b) {
+			}
+		};
 
         Logger.getLogger("ProjetJEE").log(Level.INFO, "Creating databse from SQL script");
         try {
